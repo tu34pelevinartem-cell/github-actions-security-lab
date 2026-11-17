@@ -39,3 +39,7 @@ jobs:
             echo "Secret is missing"
             exit 1
           fi
+      - name: Scan repository for secrets
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
