@@ -1,0 +1,10 @@
+title = "DevSecOps Training Rules"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "demo-password"
+description = "Detect training passwords"
+regex = '''devsecops-demo-password-[0-9]+'''
+keywords = ["devsecops-demo-password-"]
