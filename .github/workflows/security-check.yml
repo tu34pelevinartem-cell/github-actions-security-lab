@@ -28,3 +28,14 @@ jobs:
       - name: Security check
         run: |
           echo "Security check completed"
+
+      - name: Check secret availability
+        env:
+          TEST_API_KEY: ${{ secrets.TEST_API_KEY }}
+        run: |
+          if [ -n "$TEST_API_KEY" ]; then
+            echo "Secret is available"
+          else
+            echo "Secret is missing"
+            exit 1
+          fi
